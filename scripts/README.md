@@ -1,17 +1,16 @@
-Guide Design README
-How to use the features and scripts in this folder
+# Guide Design README
 
-############## Getting chopchop guides from genelist ################
+### Getting chopchop guides from genelist ###
 
-1. store gene list in file named full_gene_list.txt
-2. run: ./lookups.sh
-- this will inform you of any gene names that do not appear in the gene table that chopchop uses. If you are using a different gene list, you will have to edit this file to change the path to hg38.gene_table or whatever you are using
-- you then will manually have to google each misnomer and find which cannonical ensemble name is in the gene table. the script to make these changes is in replacements.sh
-3. run: ./replacements.sh
-- this will store the correct gene list in a file called full_gene_list_revised.txt
-4. run: ./get_strands.sh
-- this will give you which strand each gene is on, important for post processing
-- this script uses a file: condensedGRCh38_latest_genomic.gff, which only contains lines matching with genes in the gene list. the original file was downloaded from: https://www.ncbi.nlm.nih.gov/genome/guide/human/
+1. Store gene list in file. One gene name per line.
+2. Run: ```./lookups.sh <GENELIST>```
+- This will inform you of any gene names that do not appear in the gene table that chopchop uses. If you are using a different gene list, you will have to edit this file to change the path to hg38.gene_table or whatever you are using.
+- Suggestion: google each misnomer and find which cannonical ensemble name is in the gene table. The script to make these changes is in replacements.sh
+3. Edit and run: ./replacements.sh
+- This will store the correct gene list in a file called full_gene_list_revised.txt
+4. Run: ./get_strands.sh
+- This will give you which strand each gene is on, important for post processing
+- This script uses a file: condensedGRCh38_latest_genomic.gff, which only contains lines matching with genes in the gene list. the original file was downloaded from [NCBI](https://www.ncbi.nlm.nih.gov/genome/guide/human/)
 5. run ./getguides.sh <OUTFOLDER>
 - runs ./all_genes_chopchop.sh, which gets chopchop guides for all genes
 - make sure the directory is in the format ../directory or ../diff_name.
