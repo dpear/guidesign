@@ -15,11 +15,13 @@
 5. run ```./getguides.sh <OUTFOLDER> <GENE LIST>```
 - Use the gene list without strands
 - Runs ```./all_genes_chopchop.sh```, which gets chopchop guides for all genes
-6. Run ```./merge.sh```
-- Puts all .tsv files into one file with one header, adds a column for gene name
+6. Run ```./merge.sh <OUTFOLDER>```
+- Puts all .tsv files into one file with one header, adds a column for gene name.
+- Stores result in ```<OUTFOLDER>/all.tsv```
 - Might have to edit the functionality of sed.
 ~~- initially there was an issue with using sed, but resolved by using ~ instead of / as separators
 
+###### RESUME HERE ########
 7. run ./sep_chr.sh ../OUTFOLDER/all.tsv
 - separates <chr1:30> into <chr1	30> saves in file in <files> directory all_sep.tsv
 - only formatting, but necessary
