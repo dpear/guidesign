@@ -1,0 +1,2 @@
+[GCTA]{3}[GTC]{4}[GTCA]{13}.GG
+\t[AGT]{5}
