@@ -7,16 +7,19 @@
 - This will inform you of any gene names that do not appear in the gene table that chopchop uses. If you are using a different gene list, you will have to edit this file to change the path to hg38.gene_table or whatever you are using.
 - Suggestion: google each misnomer and find which cannonical ensemble name is in the gene table. The script to make these changes is in replacements.sh
 3. Edit and run: ```./replacements.sh <GENE LIST> <MODIFIED GENE LIST FILE NAME>```
-4. Run: ```./get_strands.sh```
+4. Run: ```./get_strands.sh <GENE LIST> <GENE LIST WITH STRAND OUTPUT FILE NAME>```
+- This will create a new file that has two columns (with header): gene, gene_strand.
+- Make sure to use the modified gene list you just created.
 - This will give you which strand each gene is on, important for post processing
 - This script uses a file: condensedGRCh38_latest_genomic.gff, which only contains lines matching with genes in the gene list. the original file was downloaded from [NCBI](https://www.ncbi.nlm.nih.gov/genome/guide/human/)
-5. run ./getguides.sh <OUTFOLDER>
-- runs ./all_genes_chopchop.sh, which gets chopchop guides for all genes
-- make sure the directory is in the format ../directory or ../diff_name.
-- ./local_chopchop.sh runs chopchop from the chopchop directory, so if there is no .. the folder will be saved in the chopchop directory, or there will be errors.
-6. run ./merge.sh
-- puts all tsv files into one file with one header
-- initially there was an issue with using sed, but resolved by using ~ instead of / as separators
+5. run ```./getguides.sh <OUTFOLDER> <GENE LIST>```
+- Use the gene list without strands
+- Runs ```./all_genes_chopchop.sh```, which gets chopchop guides for all genes
+6. Run ```./merge.sh```
+- Puts all .tsv files into one file with one header, adds a column for gene name
+- Might have to edit the functionality of sed.
+~~- initially there was an issue with using sed, but resolved by using ~ instead of / as separators
+
 7. run ./sep_chr.sh ../OUTFOLDER/all.tsv
 - separates <chr1:30> into <chr1	30> saves in file in <files> directory all_sep.tsv
 - only formatting, but necessary
