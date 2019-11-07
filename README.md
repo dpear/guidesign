@@ -38,6 +38,7 @@
   ~~~
 
 ## 2. Get chopchop output for a list of genes
+- Activate the conda environment: ```conda activate chopchop ```
 - Place your list of genes in a file: ```scripts/full_gene_list.txt```
 - Navigate to the ```scripts``` directory
 - Run ./getguides.sh <OPTIONS>. Note that this may take a while to run depending on your gene list size. There should be some warnings that pop up regarding a pandas error, or update, this is fine. 
