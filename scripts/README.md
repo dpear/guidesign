@@ -6,7 +6,7 @@
 2. Run: ```./lookups.sh <GENELIST>```
 - This will inform you of any gene names that do not appear in the gene table that chopchop uses. If you are using a different gene list, you will have to edit this file to change the path to hg38.gene_table or whatever you are using.
 - Suggestion: google each misnomer and find which cannonical ensemble name is in the gene table. The script to make these changes is in replacements.sh
-3. Edit and run: ./replacements.sh
+3. Edit and run: ```./replacements.sh```
 - This will store the correct gene list in a file called full_gene_list_revised.txt
 4. Run: ./get_strands.sh
 - This will give you which strand each gene is on, important for post processing
