@@ -12,18 +12,19 @@
 - Make sure to use the modified gene list you just created.
 - This will give you which strand each gene is on, important for post processing
 - This script uses a file: condensedGRCh38_latest_genomic.gff, which only contains lines matching with genes in the gene list. the original file was downloaded from [NCBI](https://www.ncbi.nlm.nih.gov/genome/guide/human/)
-5. run ```./getguides.sh <OUTFOLDER> <GENE LIST>```
+5. Run: ```./getguides.sh <OUTFOLDER> <GENE LIST>```
 - Use the gene list without strands
 - Runs ```./all_genes_chopchop.sh```, which gets chopchop guides for all genes
-6. Run ```./merge.sh <OUTFOLDER>```
+6. Run: ```./merge.sh <OUTFOLDER>```
 - Puts all .tsv files into one file with one header, adds a column for gene name.
 - Stores result in ```<OUTFOLDER>/all.tsv```
 - Might have to edit the functionality of sed in the script.
 ~~- initially there was an issue with using sed, but resolved by using ~ instead of / as separators
 
-7. Run ```./sep_chr.sh ../OUTFOLDER/all.tsv```
-- separates <chr1:30> into <chr1	30> saves in file in <files> directory all_sep.tsv
-- only formatting, but necessary
+7. Run: ```./sep_chr.sh <FILE>```
+- Takes a file with chromosome location format <chr1:30> and changes into <chr1	30>
+- Saves file in format ```<FILE>-sep```
+- Only formatting, but necessary
 8. trim.sh needs some work to account for changes in the base editing window.
 
 
@@ -31,10 +32,6 @@
 
 
 ############## VEP Analysis Pipeline #############
-
-sep_chr.sh - separates the chopchop output merged file to contain two columns for chromosome location. one for the location and one for the chromosome. outputs file in ../files/all_sep.tsv. 
-# ./sep_chr.sh ../fullgetelist/all.tsv
-## output: ../files/all_sep.tsv
 
 nucleotides.sh - obtains the line number and locations of all C's in the editing window. Outputs ../files/indexes.txt
 # ./nucleotides.sh <A,C>
