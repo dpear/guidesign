@@ -1,6 +1,6 @@
 # Guide Design README
 
-### Getting chopchop guides from genelist ###
+### Suggested Pipeline: Getting chopchop guides from a gene list ###
 
 1. Store gene list in file. One gene name per line.
 2. Run: ```./lookups.sh <GENELIST>```
@@ -18,11 +18,10 @@
 6. Run ```./merge.sh <OUTFOLDER>```
 - Puts all .tsv files into one file with one header, adds a column for gene name.
 - Stores result in ```<OUTFOLDER>/all.tsv```
-- Might have to edit the functionality of sed.
+- Might have to edit the functionality of sed in the script.
 ~~- initially there was an issue with using sed, but resolved by using ~ instead of / as separators
 
-###### RESUME HERE ########
-7. run ./sep_chr.sh ../OUTFOLDER/all.tsv
+7. Run ```./sep_chr.sh ../OUTFOLDER/all.tsv```
 - separates <chr1:30> into <chr1	30> saves in file in <files> directory all_sep.tsv
 - only formatting, but necessary
 8. trim.sh needs some work to account for changes in the base editing window.
