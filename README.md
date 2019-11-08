@@ -71,7 +71,7 @@ $ md5sum /data/daniela/Projects/guidesign/isoforms/hg38.1.ebwt
 - Navigate to the ```scripts``` directory
 - Run: 
 ~~~
-scripts$ ./getguides.sh [OUTPUT FOLDER] [GENE LIST FILE]. 
+scripts$ ./getguides.sh [OUTPUT FOLDER] [GENE LIST FILE]
 ~~~
 Note that this may take a while to run depending on your gene list size. There should be some warnings that pop up regarding a pandas error, or update, this is fine. 
 
