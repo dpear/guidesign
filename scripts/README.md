@@ -2,7 +2,7 @@
 
 ### Suggested Pipeline: Getting chopchop guides from a gene list ###
 
-1. Store gene list in file. One gene name per line.
+1. Store gene list in file. One gene name per line.  ```bedtools getfasta``` 
 2. Run: ```sh lookups.sh <GENELIST>```
 - This will inform you of any gene names that do not appear in the gene table that chopchop uses. If you are using a different gene list, you will have to edit this file to change the path to hg38.gene_table or whatever you are using.
 - Suggestion: google each misnomer and find which cannonical ensemble name is in the gene table. The script to make these changes is in replacements.sh
